@@ -55,7 +55,7 @@ public class Main {
         } else {
             System.out.printf("Нет мест, так как людей уже %d.%n", people);
         }
-        //Задание 7
+        //Задание 7.
         int one = 1;
         int two = 2;
         int three = 3;
