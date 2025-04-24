@@ -46,12 +46,13 @@ public class Main {
         // Задание 6
         int carriageCapacity = 102;
         int sittingPlaces = 60;
-        int standingRoom = carriageCapacity - sittingPlaces;
         int people = (int) (Math.random() * 102);
-        if (people <= 60) {
-            System.out.printf("Так как людей всего %d, то можно сесть.%n", people);
-        } else if (people >= 60) {
-            System.out.printf("Все сидячие места уже заняты, так как людей уже %d.%n", people);
+        int standingRoom = carriageCapacity - sittingPlaces;
+        int freeStandingRoom = standingRoom - (people - sittingPlaces);
+        if (people <= sittingPlaces) {
+            System.out.printf("Можно сесть, так как людей всего %d.%n", people);
+        } else if (people >= sittingPlaces && people < carriageCapacity) {
+            System.out.printf("Все сидячие места уже заняты, так как людей уже %d, но есть %d стоячих мест.%n", people, freeStandingRoom);
         } else {
             System.out.printf("Нет мест, так как людей уже %d.%n", people);
         }
